@@ -11,6 +11,17 @@ class ActorsController < ApplicationController
  
     redirect_to("/actors")
    end 
+
+   def destroy
+    the_id = params.fetch("path_id")
+    actor_record = Actor.where({ :id => the_id })
+    actor = actor_record.at(0)
+  
+    actor.destroy
+  
+    redirect_to("/actors")
+  end
+
   
   def modify
    
