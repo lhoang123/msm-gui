@@ -12,6 +12,21 @@ class DirectorsController < ApplicationController
    redirect_to("/directors")
   end 
 
+  def destroy
+    the_id = params[:path_id]
+
+    the_director = Director.find_by(id: the_id)
+
+    if the_director == nil 
+      flash[:error] = "Director not found."
+    else
+      the_director.destroy
+      flash[:success] = "Director deleted successfully."
+    end
+ 
+    redirect_to("/directors")
+   end 
+
   def index
     matching_directors = Director.all
     @list_of_directors = matching_directors.order({ :created_at => :desc })
