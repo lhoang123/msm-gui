@@ -12,25 +12,26 @@
   </a>
 </div>
 
-<form action="/modify_actor_record">
+<form action="/modify_actor/<%= @the_actor.id %>">
   <div>
     <label for="name_field">Name</label>
-    <input id = "name_field" type= "text" name = "new_name">
-	</div>
+    <input id="name_field" type="text" name="new_name" value="<%= @the_actor.name %>">
+</div>
+
 
   <div>
     <label for="dob_field">Dob</label>
-    <input id = "dob_field" type= "date" name = "new_dob">
+    <input id = "dob_field" type= "date" name = "new_dob" value="<%= @the_actor.dob %>">
   </div>
 
   <div>
     <label for="bio_field">Bio</label>
-    <textarea id = "bio_field" type= "text" name = "new_bio" row = "3"></textarea>
+    <textarea id = "bio_field" type= "text" name = "new_bio" row = "3"><%= @the_actor.bio %></textarea>
   </div>
 
   <div>
     <label for="image_field">Image</label>
-    <input id = "image_field" type= "text" name = "new_image">
+    <input id = "image_field" type= "text" name = "new_image" value="<%= @the_actor.image %>">
 	</div>
 
   <button>Update actor</button>

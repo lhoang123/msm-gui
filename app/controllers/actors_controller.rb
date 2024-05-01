@@ -22,12 +22,10 @@ class ActorsController < ApplicationController
     redirect_to("/actors")
   end
 
-  
   def modify
-   
-    the_id = params[:path_id]
-
-    actor = Actor.find_by(id: the_id) 
+    the_id = params.fetch("path_id")
+    actor_record = Actor.where({ :id => the_id })
+    actor = actor_record.at(0)
 
     actor.name = params.fetch("new_name")
     actor.dob = params.fetch("new_dob")
@@ -36,7 +34,7 @@ class ActorsController < ApplicationController
 
     actor.save
   
-    redirect_to("/actors/:path_id")  
+    redirect_to("/actors/#{actor.id}")  
    
   end 
 

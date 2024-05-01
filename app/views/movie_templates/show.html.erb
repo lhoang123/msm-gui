@@ -12,6 +12,40 @@
 </a>
 </div>
 
+<form action="/modify_movie/<%= @the_movie.id %>">
+  <div>
+    <label for="title_field">Title</label>
+    <input id = "title_field" type= "text" name = "new_title" value="<%= @the_movie.title %>">
+	</div>
+
+  <div>
+    <label for="year_field">Year</label>
+    <input id = "year_field" type= "text" name = "new_year" value="<%= @the_movie.year %>">
+  </div>
+
+  <div>
+    <label for="duration_field">Duration</label>
+    <input id = "duration_field" type= "text" name = "new_duration" value="<%= @the_movie.duration %>">
+  </div>
+
+  <div>
+    <label for="description_field">Description</label>
+    <textarea id = "description_field" type= "text" name = "new_description" row = "3"><%= @the_movie.description %></textarea>
+  </div>
+
+  <div>
+    <label for="image_field">Image</label>
+    <input id = "image_field" type= "text" name = "new_image" value="<%= @the_movie.image %>">
+	</div>
+
+  <div>
+    <label for="director_id">Director ID</label>
+    <input id = "director_id" type= "text" name = "new_director_id" value="<%= @the_movie.director_id %>">
+	</div>
+
+  <button>Update movie</button>
+</form>
+
 <hr>
 
 <dl>
