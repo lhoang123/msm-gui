@@ -15,7 +15,7 @@
 
   <div>
     <label for="duration_field">Duration</label>
-    <textarea id = "duration_field" type= "text"></textarea>
+    <input id = "duration_field" type= "text" name = "the_duration">
   </div>
 
   <div>
@@ -87,7 +87,12 @@
       
       <% the_director = matching_directors.at(0) %>
 
-      <%= the_director.name %>
+      <% if the_director == nil %>
+        Uh oh!
+      <%  else  %>
+        <%= the_director.name %>
+      <% end %>
+
     </td>
 
     <td>
